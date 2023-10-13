@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desktop</title>
+</head>
+<style>
+    body{
+        background: #151b28;
+        font-family: "Kanit";
+    }
+    #SiteContent{
+        background: #0B0E14;
+        box-shadow: black 5px 5px 10px;
+        border-radius: 20px;
+        margin: 300px 450px 200px 450px;
+        padding: 0%;
+        color: red;
+        transition: all 1s;
+    }
+    #SiteContent:hover{
+        box-shadow: black 5px 5px 20px;
+    }
+
+    .NavBar{
+        color: #057f8e;
+        position: relative;
+        background: rgb(0, 0, 0);
+        width: 90%;
+        padding-left: 10%;
+        text-align: center;
+        border-radius: inherit;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .NavBar img{
+        position: relative;
+        float: right;
+        width: 15px;
+        padding: 15px;
+        padding-top: 5px;
+        transition: all 0.1s;
+    }
+
+    .NavBar img:hover{
+        width: 18px;
+        padding: 14px;
+        padding-top: 4px;
+    }
+
+    #Content{
+        padding: 3%;
+    }
+
+    .line{
+        transition: all 0.3s;
+    }
+
+    .line:hover{
+        padding-left: 10px;
+    }
+
+    .Credit{
+        text-align: center;
+        color: #202a3e;
+    }
+</style>
+<body>
+    <div id="SiteContent">
+        <div class="NavBar">
+            <img width="10px" src="img/NodethingyClose@4x.png" alt="">
+            <img width="10px" src="img/NodethingyMax@4x.png" alt="">
+            <img width="10px" src="img/NodethingyMin@4x.png" alt="">
+            Desktop.html
+        </div>
+        <div id="Content"></div>
+    </div>
+    <div class="Credit">Made By HuskiGames</div>
+</body>
+</html>
+<script>
+    site = document.getElementById("Content").innerHTML;
+
+    var LineNum = 0;
+
+    write(['1 <', '1 !', '2 DOCTYPE','3  html','1 >']);
+    write(['1 <', '2 html', '3  lang','1 =','4 "en"', '1 >']);
+    write(["t 1"]);
+    write(['1 <', '2 head', '1 >']);
+    write(["t 1",'1 <', '2 meta', '3  charset', '1 =', '4 "UTF-8"', '1 >']);
+    write(["t 1",'1 <', '2 title', '1  >', '5 Desktop', '1 <', '2 /title', '1 >']);
+    write(['1 <', '1 /', '2 head', '1 >']);
+    write(["t 1"]);
+    write(['1 <', '2 body', '1 >']);
+    write(["t 1",'1 <', '2 div ', '3 id', '1 =', '4 "Content"', '1 >', '1 <', '2 /div', '1 >']);
+    write(['1 <', '1 /', '2 body', '1 >']);
+    write(['1 <', '1 /', '2 html', '1 >']);
+    write(["t 1"]);
+    write(['1 <', '2 script', '1 >']);
+    write(['t 1', '5 document', '3 .getElementById', '6 (', '4 "Content"', '6 )', '3 .', '5 innerHTML', '7  = ','4 "/Desktop.html"', '5 ;']);
+    write(['1 <', '1 /', '2 script', '1 >']);
+    
+    x = document.getElementById("Content").innerHTML = site;
+
+    function write(input){
+        site += '<div class="line">'
+        site += '<span style="color: gray;">' + LineNum + '</span>'
+        site += '<span style="color: #0c1024;">';
+            for (x = 0; x < 5; x++) {
+                site += '_';
+            }
+        site += '</span>';
+
+        input.forEach(element => {
+            colour = element[0]
+            text = element.substr(2, element.length - 1);
+            
+            if(element[0] == "t"){
+                site += '<span style="color: #0c1024;">';
+                    for (x = 0; x < text * 3; x++) {
+                        site += '_';
+                    }
+            site += '</span>';
+        }
+        else{
+            switch(colour) {
+                case "1":
+                site += '<span style="color: gray;">';
+                break;
+                
+                case "2":
+                site += '<span style="color: lightblue;">';
+                break;
+                    
+                case "3":
+                site += '<span style="color: orange;">';
+                break;
+                            
+                case "4":
+                site += '<span style="color: lime;">';
+                break;
+                case "5":
+                site += '<span style="color: white;">';
+                break;
+                
+                case "6":
+                site += '<span style="color: yellow;">';
+                break;
+                case "7":
+                site += '<span style="color: lightcoral;">';
+                break;
+                default:
+                    site += '<span>';
+                    }
+                    site += text + "</span>";
+                }
+            });
+        site += '</div>'
+        LineNum++;
+    }
+</script>
