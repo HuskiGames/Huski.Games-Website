@@ -8,28 +8,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" type="text/css" href="DeveloperText.css" />
     <title>Huski Games</title>
-
-    <style>
-        .box {
-            width: 100px;
-            height: 100px;
-            background: rgb(255, 255, 255);
-            margin: 20px;
-            opacity: 0;
-            transition: opacity 1s;
-        }
-    </style>
 </head>
     <body>
-        <!-- page loader -->
-        <link rel="stylesheet" type="text/css" href="loader.css" />
-        <div class="loader" id="loader-6">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        
+
 
         <div class="Cover">
             <h1 data-value="HuskiGames" id="HackerEffect" class="Title">HuskiGames</h1>
@@ -44,17 +25,33 @@
                 </div>
             </div>
         </div>
-        <div>
-            <div data-aos="fade-up" class="GamesText">
-                GAMES
-            </div>
-            <div class="GameDisplayBox">
-                <div class="GameImage"></div>
-                <div class="GameImage"></div>
-            </div>
-            
+        <div data-aos="none" class="GamesText">
+            MY GAMES
         </div>
+        <div style="margin-left: -100px; margin-top: -5vw;" class="Container" id="Container1">
+            <div class="box"><img draggable="false" src="https://picsum.photos/801/400" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/802/400" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/803/400" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/804/400" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/805/400" alt=""></div>
+        </div>
+        <div style="margin-left: -400px;" class="Container" id="Container2">
+            <div class="box"><img draggable="false" src="https://picsum.photos/806/401" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/807/402" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/808/403" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/809/404" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/810/405" alt=""></div>
+        </div>     
 
+
+        <!-- page loader -->
+        <link rel="stylesheet" type="text/css" href="loader.css" />
+        <div class="loader" id="loader-6">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </body>
     
     
@@ -67,5 +64,5 @@
     
     
     <script src="HackerEffect.js"></script>
-
+    <script src="horizontalScroll.js"></script>
 </html>

@@ -65,7 +65,13 @@
         filter: opacity(1);
     }
 
+    99%{
+      margin-left: 0px;
+    }
+
     100%{
         filter: opacity(0);
+        width: 0%;
+        margin-left: -1000px;
     }
 }
