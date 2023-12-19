@@ -1,0 +1,23 @@
+
+
+*{
+    --text: #ebecef;
+    --background: #0f1015;
+    --primary: #abafce;
+    --secondary: #373d72;
+    --accent: #666fc2;
+    padding: 0;
+    margin: 0;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    font-family: 'Kanit';
+    color: var(--text);
+}
+
+body{
+    background: var(--background);
+}
+
+::-webkit-scrollbar {
+    display: none;
+  }

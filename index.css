@@ -1,0 +1,41 @@
+*{
+    --text: #ebecef;
+    --background: #0f1015;
+    --primary: #abafce;
+    --secondary: #373d72;
+    --accent: #666fc2;
+}
+
+.Title{
+    width: 100vw;
+    text-align: center;
+    margin-top: 25vh;
+    font-size: 10vw;
+}
+
+.GamesText{
+    width: 100vw;
+    margin-top: 1%;
+    font-size: 20vw;
+    text-align: center;
+}
+
+.GameDisplayBox{
+    display: flex;
+}
+
+.GameImage{
+    flex: 0.4;
+    width: 30vw;
+    height: 15vw;
+    background: white;
+}
+
+@media (max-width: 1000px) {
+    .Title{
+        width: 100vw;
+        text-align: center;
+        margin-top: 25vh;
+        font-size: 15vw;
+    }
+}

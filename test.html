@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            overflow: hidden;
+            background: #0f1015;
+            margin: 0%;
+            padding: 0%;
+        }
+
+        .Container{
+            display: flex;
+        }
+
+        .box{
+            width: 30vw;
+            height: 20vw;
+
+            
+            
+            margin: 1vw;
+            border-radius: 20px;
+            background: rgb(255, 255, 255);
+            flex-shrink: 0;
+            transition: all 0.5s;
+        }
+
+        .box:hover{
+            width: 32vw;
+            height: 22vw;
+            margin: 0vw;
+            margin-top: 0vw;
+        }
+
+        .box img{
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+        }
+    </style>
+</head>
+    <body>
+        <div style="margin-left: -100px;" class="Container" id="Container1">
+            <div class="box"><img draggable="false" src="https://picsum.photos/801/400" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/802/400" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/803/400" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/804/400" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/805/400" alt=""></div>
+        </div>
+        <div style="margin-left: -400px;" class="Container" id="Container2">
+            <div class="box"><img draggable="false" src="https://picsum.photos/806/401" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/807/402" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/808/403" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/809/404" alt=""></div>
+            <div class="box"><img draggable="false" src="https://picsum.photos/810/405" alt=""></div>
+        </div>
+    </body>
+
+    <script src="horizontalScroll.js"></script>
+</html>

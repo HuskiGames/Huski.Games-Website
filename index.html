@@ -1,26 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="stylesheet.css">
-    <title>Desktop</title>
-</head>
-<body>
-    <div id="SiteContent">
-        <div class="NavBar">
-            <img width="10px" src="img/NodethingyClose@4x.png" alt="">
-            <img width="10px" src="img/NodethingyMax@4x.png" alt="">
-            <img width="10px" src="img/NodethingyMin@4x.png" alt="">
-            Desktop.html
-        </div>
-        <div id="Content"></div>
-    </div>
-    <div class="Credit">Made By HuskiGames</div>
-    <!-- <div class="time h" id="timeh">H</div>
-    <div class="time d">:</div>    
-    <div class="time m" id="timem">M</div> -->
-</body>
-</html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="theme.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" type="text/css" href="DeveloperText.css" />
+    <title>Huski Games</title>
 
-<script src="Script.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: rgb(255, 255, 255);
+            margin: 20px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+    <body>
+        <div class="Cover">
+            <h1 data-value="HuskiGames" id="HackerEffect" class="Title">HuskiGames</h1>
+            <div class="Developer-Text">
+                <div class="Left">
+                    <div class="TextGame">Game</div>
+                    <div class="TextWebsite">Website</div>
+                    <div class="TextSoftware">Software</div>
+                </div>
+                <div class="Right">
+                    <div class="Developer">Developer</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div data-aos="fade-up" class="GamesText">
+                GAMES
+            </div>
+            <div class="GameDisplayBox">
+                <div class="GameImage"></div>
+                <div class="GameImage"></div>
+            </div>
+            
+        </div>
+
+
+        <!-- page loader -->
+        <link rel="stylesheet" type="text/css" href="loader.css" />
+        <div class="loader" id="loader-6">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </body>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 2000, // Set the duration to 2000 milliseconds (2 seconds)
+        });
+    </script>
+    
+    
+    <script src="HackerEffect.js"></script>
+
+</html>
