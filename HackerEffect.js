@@ -5,7 +5,7 @@ function delay(time) {
     return new Promise(resolve => setTimeout(resolve, time));
 }
   
-delay(1000).then(() => RunGlitchEffect());
+delay(2000).then(() => RunGlitchEffect());
   
 function RunGlitchEffect(){
     let iteration = 0;
@@ -28,6 +28,7 @@ function RunGlitchEffect(){
           clearInterval(interval);
         }
         
-        iteration += 1 / 3;
-    }, 10);
+        iteration += 1 / 5;
+    }, 30);
+    delay(5000).then(() => RunGlitchEffect());
 }
