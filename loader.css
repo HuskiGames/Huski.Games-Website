@@ -13,7 +13,7 @@
     padding-left: 47vw;
     padding-top: 47vh;
     background: var(--background);
-    animation: fadeout 0.3s ease-in-out 1s forwards;
+    animation: fadeout 0.3s ease-in-out 0.1s forwards;
 }
 
   #loader-6{
