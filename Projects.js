@@ -1,3 +1,4 @@
+//cards
 var cards = [
     {
         Title: "Space Time",
@@ -13,7 +14,7 @@ var cards = [
         Title: "Glitched Out",
         description: "Climb as high as you can reaching checkpoints as you go the checkpoint before being le avoiding the corruption.",
         video: "media/videos/GlitchedOut.mp4",
-        stoptime: 17,
+        stoptime: 16,
         link1: "https://huskigame.itch.io/glitchedout",
         link1Text: "Play Game",
         thumbnail: "media/thumbnails/GlitchedOut.png"
@@ -79,3 +80,93 @@ for (var i = 0; i < cards.length; i++){
     content += "\n";
 }
 ProjectsContainer.innerHTML = content;
+
+let currentIndex = 0;
+
+cards = document.getElementsByClassName('square');
+
+function updateSlider(index) {
+    if (screen.width > 1000) {
+        index = 0;
+    }
+    const slider = document.querySelector('.slider');
+    const offset = index * 100;
+    slider.style.transform = `translateX(-${offset}%)`;    
+}
+
+//carousel
+const slider = document.querySelector('.slider');
+const hammer = new Hammer(slider);
+currentIndex = 0;
+
+hammer.on('swipeleft', () => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateSlider(currentIndex);
+});
+
+hammer.on('swiperight', () => {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateSlider(currentIndex);
+});
+
+
+var loop = setInterval(function(){
+    updateSlider(currentIndex);
+}, 40);
+
+//Video
+const video = document.getElementById('Projectsvideo');
+const Cards = document.querySelectorAll('.square');
+
+var currentclip = "media/videos/SpaceTime.mp4";
+var currentstoptime = 0;
+var transparency = 0;
+var Hovering = null;
+var Hoveringtime = null;
+
+var loop = setInterval(function(){
+    Hovering = null;
+    for (let i = 0; i < Cards.length; i++) {
+        if (Cards[i].matches(':hover') && screen.width > 1000) {
+            if(Cards[i].getAttribute('video') != null){
+                Hovering = true;
+                currentclip = Cards[i].getAttribute('video');
+                currentstoptime = Cards[i].getAttribute('stoptime');
+            }
+        }
+        else if(i == currentIndex && screen.width < 1000){
+            Hovering = true;
+            currentclip = Cards[i].getAttribute('video');
+            currentstoptime = Cards[i].getAttribute('stoptime');
+        }
+    }
+
+
+    if(Hovering){
+        if(video.src.includes(currentclip) && video.currentTime < currentstoptime && video.readyState == 4){
+            transparency = (transparency + 0.025).clamp(0, 0.25);
+        }
+        else{
+            transparency = (transparency - 0.05).clamp(0, 0.25);
+        }
+    }
+    else{
+        transparency = (transparency - 0.05).clamp(0, 0.25);
+        if(transparency == 0){
+            video.currentTime = 0
+        }
+    }
+    
+    if(video.src.includes(currentclip) == false){
+        if(transparency == 0){
+            video.src = currentclip;
+        }
+    }
+    video.style.opacity = transparency;
+
+}, 50);
+
+
+Number.prototype.clamp = function(min, max) {
+    return Math.min(Math.max(this, min), max);
+  };
