@@ -1,4 +1,3 @@
-
 .Static {
     width: 100%;
     height: 100%;
@@ -72,7 +71,7 @@
     align-content: center;
 }
 
-video{ 
+#Projectsvideo{ 
     height: 100%;
     width: 100%;
     object-fit: fill;
@@ -87,20 +86,64 @@ video{
 
 .project-play-Button{
     transition: all 0.2s ease-in-out;
-    margin-top: 10px;
-    padding: 0.2rem 0.5rem;
+    height: 30px;
     background: #00000000;
     border: solid 1px #ffffff;
     color: #ffffff;
-    border-radius: 5px
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.Badge{
+    transition: all 0.2s ease-in-out;
+    height: 30px;
+    width: 35px;
+    background: #00000000;
+    border: solid 0px #ffffff;
+    color: #ffffff;
+    border-radius: 5px;
+    align-items: center;
+    padding-top: 4px;
+}
+
+.Badge:hover{
+    background: #ffffff;
+}
+
+.Badge img{transition: all 0.2s ease-in-out;}
+
+.Badge:hover img{
+    filter: brightness(0.2);
+}
+
+.Badge-Logo{
+    max-height: 25px;
+    margin: 0px;
+    width: auto;
 }
 
 
-.project-play-Buttons{
+.project-Buttons {
+    margin-top: auto;
+    bottom: 0px;
     display: flex;
+    align-items: center;
+    height: 40px;
     width: 100%;
-    margin-right: 10px;
-    justify-content: end;
+    padding: 10px;
+    padding-bottom: 5px;
+}
+
+.project-badges {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.project-badges > * {
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .project-play-Button:hover{
@@ -114,10 +157,11 @@ video{
 }
 
 .card-content{
-    width: 100%;
+    position: relative;
     height: 100%;
-    align-items: center;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     margin: 5px;
     backdrop-filter: blur(10px) brightness(2.5);
     border-radius: 15px;
@@ -153,6 +197,15 @@ video{
     body {
         max-width: 500px;
     }
+
+    #Projectsvideo{ 
+        object-fit: cover;
+        opacity: 0.2;
+        pointer-events: none;
+        z-index: -1;
+        filter: blur(6px) brightness(0.9) contrast(0.9);
+    }
+    
 
     .container {
         position: relative;

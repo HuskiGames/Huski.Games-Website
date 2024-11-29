@@ -2,13 +2,44 @@
     display: none;
 }
 
+html {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     font-family: kanit, Arial, sans-serif;
     line-height: 1.6;
     max-width: 800px;
-    padding: 10px;
     margin: 0px auto;
     text-align: center;
     background-color: #090909;
     color: #ffffff;
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+.footer {
+    background-color: #111111;
+    border-top: 1px solid #333;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #888;
 }

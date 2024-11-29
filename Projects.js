@@ -7,7 +7,8 @@ var cards = [
         stoptime: 26,
         link1: "https://huskigame.itch.io/spacetime",
         link1Text: "Play Game",
-        thumbnail: "media/thumbnails/SpaceTime.png"
+        thumbnail: "media/thumbnails/SpaceTime.png",
+        technologies: ["Unity", "C#"]
         
     },
     {
@@ -17,7 +18,8 @@ var cards = [
         stoptime: 16,
         link1: "https://huskigame.itch.io/glitchedout",
         link1Text: "Play Game",
-        thumbnail: "media/thumbnails/GlitchedOut.png"
+        thumbnail: "media/thumbnails/GlitchedOut.png",
+        technologies: ["Unity", "C#"]
     },
     {
         Title: "Hex Defender",
@@ -26,16 +28,18 @@ var cards = [
         stoptime: 26,
         link1: "https://huskigame.itch.io/hexagon-defender",
         link1Text: "Play Game",
-        thumbnail: "media/thumbnails/HexDefender.png"
+        thumbnail: "media/thumbnails/HexDefender.png",
+        technologies: ["Unity", "C#"]
     },
     {
         Title: "Just DICE-side",
         description: "An action dice game where you chose the side of the dice",
         video: "media/videos/JustDICESide.mp4",
-        stoptime: 22,
+        stoptime: 28,
         link1: "https://huskigame.itch.io/diceside",
         link1Text: "Play Game",
-        thumbnail: "media/thumbnails/JustDICESide.png"
+        thumbnail: "media/thumbnails/JustDICESide.png",
+        technologies: ["Unity", "C#"]
     },
     {
         Title: "Split-Rebound",
@@ -44,16 +48,68 @@ var cards = [
         stoptime: 22,
         link1: "https://huskigame.itch.io/split-rebound",
         link1Text: "Play Game",
-        thumbnail: "media/thumbnails/SplitRebound.png"
+        thumbnail: "media/thumbnails/SplitRebound.png",
+        technologies: ["Unity", "C#"]
     },
     {
         Title: "Poison Factory",
         description: "brew and Replicate poisonous potions for an evil witch",
         video: "media/videos/PoisonFactory.mp4",
-        stoptime: 22,
+        stoptime: 35,
         link1: "https://huskigame.itch.io/poison-factory",
         link1Text: "Play Game",
-        thumbnail: "media/thumbnails/PoisonFactory.png"
+        thumbnail: "media/thumbnails/PoisonFactory.png",
+        technologies: ["Unity", "C#"]
+    },
+    {
+        Title: "Paint Blaster",
+        description: "Race against the clock to paint as much as you can copying the already painted drawing",
+        video: "media/videos/PaintBlaster.mp4",
+        stoptime: 22,
+        link1: "https://huskigame.itch.io/paint-blaster",
+        link1Text: "Play Game",
+        thumbnail: "media/thumbnails/PaintBlaster.png",
+        technologies: ["Unity", "C#"]
+    },
+    {
+        Title: "Cargo In The Caribbean",
+        description: "deliver cargo from island to island in these pirates infested waters",
+        video: "media/videos/CargoInTheCaribbean.mp4",
+        stoptime: 55,
+        link1: "https://huskigame.itch.io/cargo",
+        link1Text: "Play Game",
+        thumbnail: "media/thumbnails/CargoInTheCaribbean.png",
+        technologies: ["Unity", "C#"]
+    },
+    {
+        Title: "Intersection",
+        description: "Control the traffic lights to avoid a multi car crash",
+        video: "media/videos/Intersection.mp4",
+        stoptime: 30,
+        link1: "https://huskigame.itch.io/intersection",
+        link1Text: "Play Game",
+        thumbnail: "media/thumbnails/Intersection.png",
+        technologies: ["Unity", "C#"]
+    },
+    {
+        Title: "Billy Basher",
+        description: "Go out for a silly drive after a stressful day of work",
+        video: "media/videos/BillyBasher.mp4",
+        stoptime: 30,
+        link1: "https://huskigame.itch.io/billy-basher",
+        link1Text: "Play Game",
+        thumbnail: "media/thumbnails/BillyBasher.png",
+        technologies: ["Unity", "C#"]
+    },
+    {
+        Title: "Monster Building",
+        description: "Attack the people in this building to score points but be careful attacking the dark blue people will result in a game over",
+        video: "media/videos/MonsterBuilding.mp4",
+        stoptime: 30,
+        link1: "https://huskigame.itch.io/monster-building",
+        link1Text: "Play Game",
+        thumbnail: "media/thumbnails/MonsterBuilding.png",
+        technologies: ["Unity", "C#"]
     }
 ];
 
@@ -65,8 +121,14 @@ function formatCard(item, index){return `
             <img src="${item.thumbnail}" class="project-thumbnail">
             <p class="project-title">${item.Title}</p>
             <p class="project-description">${item.description}</p>
-            <div class="project-play-Buttons">
-                <a href="${item.link1}" style="margin-right: 10px;">
+            <div class="project-Buttons">
+                <span class="Badge">
+                    <img src="media/Logos/Unity.png" class="Badge-Logo">
+                </span>
+                <span class="Badge">
+                    <img src="media/Logos/csharp.png" class="Badge-Logo">
+                </span>
+                <a href="${item.link1}" target='_blank' style="margin-right: 10px;">
                     <button class="project-play-Button">${item.link1Text}</button>
                 </a>
             </div>
@@ -134,6 +196,7 @@ var loop = setInterval(function(){
                 currentstoptime = Cards[i].getAttribute('stoptime');
             }
         }
+        //--- Video on Mobile --- //
         else if(i == currentIndex && screen.width < 1000){
             Hovering = true;
             currentclip = Cards[i].getAttribute('video');
@@ -143,7 +206,7 @@ var loop = setInterval(function(){
 
 
     if(Hovering){
-        if(video.src.includes(currentclip) && video.currentTime < currentstoptime && video.readyState == 4){
+        if(video.src.includes(currentclip) && video.currentTime < currentstoptime && video.readyState >= 3){
             transparency = (transparency + 0.025).clamp(0, 0.25);
         }
         else{
