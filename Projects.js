@@ -141,7 +141,80 @@ for (var i = 0; i < cards.length; i++){
     content += formatCard(cards[i], i + 1);
     content += "\n";
 }
+
+// Only add show more button on desktop
+if (window.innerWidth >= 1000) {
+    content += `<div class="square show-more-square" onclick="toggleShowMore()">
+        <div class="card-content">
+            <span>Show More</span>
+            <span class="show-more-arrow">↓</span>
+        </div>
+    </div>`;
+}
+
 ProjectsContainer.innerHTML = content;
+
+// Only initialize hide on desktop
+if (window.innerWidth >= 1000) {
+    setTimeout(() => {
+        const projects = document.querySelectorAll('.square:not(.show-more-square)');
+        projects.forEach((project, index) => {
+            if (index >= 5) {
+                project.hidden = true;
+            }
+        });
+    }, 100);
+}
+
+let showingAllProjects = false;
+function toggleShowMore() {
+    if (window.innerWidth >= 1000) {
+        showingAllProjects = !showingAllProjects;
+        const projects = document.querySelectorAll('.square:not(.show-more-square)');
+        const showMoreText = document.querySelector('.show-more-square .card-content span:first-child');
+        const showMoreArrow = document.querySelector('.show-more-arrow');
+        
+        projects.forEach((project, index) => {
+            if (index >= 5) {
+                project.hidden = !showingAllProjects;
+            }
+        });
+        
+        showMoreText.textContent = showingAllProjects ? 'Show Less' : 'Show More';
+        showMoreArrow.classList.toggle('up', showingAllProjects);
+    }
+}
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    const isDesktop = window.innerWidth >= 1000;
+    const projects = document.querySelectorAll('.square:not(.show-more-square)');
+    const showMoreButton = document.querySelector('.show-more-square');
+    
+    if (!isDesktop) {
+        // Show all projects on mobile
+        projects.forEach(project => project.hidden = false);
+        if (showMoreButton) showMoreButton.remove();
+        showingAllProjects = false;
+    } else if (!showMoreButton) {
+        // Add show more button if switching to desktop
+        const button = document.createElement('div');
+        button.className = 'square show-more-square';
+        button.onclick = toggleShowMore;
+        button.innerHTML = `
+            <div class="card-content">
+                <span>Show More</span>
+                <span class="show-more-arrow">↓</span>
+            </div>
+        `;
+        ProjectsContainer.appendChild(button);
+        
+        // Hide projects after first 5
+        projects.forEach((project, index) => {
+            if (index >= 5) project.hidden = true;
+        });
+    }
+});
 
 let currentIndex = 0;
 
@@ -170,6 +243,11 @@ hammer.on('swiperight', () => {
     currentIndex = (currentIndex - 1 + cards.length) % cards.length;
     updateSlider(currentIndex);
 });
+
+var scrollll = setInterval(function(){
+    currentIndex = (currentIndex + 1 + cards.length) % cards.length;
+    updateSlider(currentIndex);
+}, 5000);
 
 
 var loop = setInterval(function(){

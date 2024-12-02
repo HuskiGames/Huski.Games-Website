@@ -156,6 +156,10 @@
     transition: scale 0.2s ease-in-out;
 }
 
+.square[hidden] {
+    display: none !important;
+}
+
 .card-content{
     position: relative;
     height: 100%;
@@ -184,6 +188,39 @@
         height: 100%;
         transition: transform 0.2s ease-in-out, opacity 0.25s ease-in-out;
         opacity: 1;
+    }
+
+    .show-more-square {
+        aspect-ratio: 16/9;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .show-more-square .card-content {
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 500;
+        font-size: 18px;
+        gap: 10px;
+    }
+
+    .show-more-arrow {
+        font-size: 24px;
+        transition: transform 0.3s ease;
+        display: inline-block;
+    }
+
+    .show-more-arrow.up {
+        transform: rotate(180deg);
+    }
+
+    .show-more-square:hover .card-content {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-5px);
     }
 }
 

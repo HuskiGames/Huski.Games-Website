@@ -7,48 +7,104 @@
     <title>HuskiGames</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="Projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body>
 
-    <div class="Static">
-
-    </div>
-    <div class="videoWrapper">
-        <video muted autoplay id="Projectsvideo" src="media\videos\SpaceTime.mp4"></video>
-    </div>
-
-
-    <div>
-        <p class="ExperanceTitle">Experience</p>
-        <div style="background-color: #ff5722; color: black;" class="chip">HTML</div>
-        <div style="background-color: #3f51b5; color: white;" class="chip">CSS</div>
-        <div style="background-color: #ffeb3b; color: black;" class="chip">JavaScript</div>
-        <div style="background-color: #37474f; color: white;" class="chip">Unity</div>
-        <div style="background-color: #212121; color: white;" class="chip">Flask</div>
-        <div style="background-color: #4a90e2; color: white;" class="chip">Python</div>
-        <div style="background-color: #4caf50; color: black;" class="chip">C#</div>
-        <div style="background-color: #4caf50; color: black;" class="chip">Blender</div>
-    </div>
-    <p class="ExperanceTitle MobileView">20+ Projects</p>
-    <p class="ExperanceTitle PCView">Projects</p>
-
-    <div class="container">
-        <div class="slider" style="text-align: center;" id="ProjectsContainer">
-            Loading Projects.....
+    <nav class="side-nav">
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Home</span>
+            </a>
+            <a href="#about" class="nav-link">
+                <span class="nav-icon">👤</span>
+                <span class="nav-text">About</span>
+            </a>
+            <a href="#technologies" class="nav-link">
+                <span class="nav-icon">⚡</span>
+                <span class="nav-text">Technologies</span>
+            </a>
+            <a href="#projects" class="nav-link">
+                <span class="nav-icon">🎮</span>
+                <span class="nav-text">Projects</span>
+            </a>
         </div>
+    </nav>
+
+    <div class="videoWrapper">
+        <video muted autoplay id="Projectsvideo" src=""></video>
     </div>
 
-    <div style="margin-top: 1000px;"></div>
+    <main>
+        <section id="home" class="section hero">
+            <div class="Static"></div>
+            <div class="hero-content">
+                <h1>HUSKI GAMES</h1>
+                <p>Crafting Interactive Experiences</p>
+                <div class="social-links">
+                    <a href="https://github.com/huskigames" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://x.com/huski_games" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/baylin-clifford-271a68329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://instagram.com/huskigames" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="hero-cta">
+                    <button class="cta-button" onclick="document.getElementById('technologies').scrollIntoView({behavior: 'smooth'})">
+                        Explore Projects
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>
+                    Im a developer driven by my love to create digital things.
+                </p>
+            </div>
+        </section>
+
+        <section id="technologies" class="section">
+            <h2 class="section-title">Technologies</h2>
+            <div class="tech-grid">
+                <!-- Technologies will be loaded dynamically -->
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="container">
+                <div class="slider" style="text-align: center;" id="ProjectsContainer">
+                    Loading Projects.....
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div style="margin-bottom: 300px;" class="PCView"></div>
+    <div style="margin-bottom: 500px;" class="MobileView"></div>
 
     <footer class="footer">
         <div class="footer-content">
-            <span>&copy; 2024 HuskiGames. All rights reserved. 29.11.2</span>
+            <span>&copy; 2024 HuskiGames. All rights reserved. 2.12.1</span>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <script src="Projects.js"></script>
+    <script src="Technologies.js"></script>
+    <script src="navigation.js"></script>
+    <script src="scroll-animations.js"></script>
 </body>
 
 </html>
