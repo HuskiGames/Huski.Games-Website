@@ -233,20 +233,25 @@ function updateSlider(index) {
 const slider = document.querySelector('.slider');
 const hammer = new Hammer(slider);
 currentIndex = 0;
+hadmanualscroll = false;
 
 hammer.on('swipeleft', () => {
     currentIndex = (currentIndex + 1) % cards.length;
     updateSlider(currentIndex);
+    hadmanualscroll = true;
 });
 
 hammer.on('swiperight', () => {
     currentIndex = (currentIndex - 1 + cards.length) % cards.length;
     updateSlider(currentIndex);
+    hadmanualscroll = true;
 });
 
 var scrollll = setInterval(function(){
-    currentIndex = (currentIndex + 1 + cards.length) % cards.length;
-    updateSlider(currentIndex);
+    if(!hadmanualscroll){
+        currentIndex = (currentIndex + 1 + cards.length) % cards.length;
+        updateSlider(currentIndex);
+    }
 }, 5000);
 
 

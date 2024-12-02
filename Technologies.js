@@ -2,22 +2,22 @@ const technologies = [
     {
         name: "Unity",
         logo: "media/Logos/unity.png",
-        description: "Game development engine used for creating immersive 2D and 3D experiences with powerful physics and rendering capabilities."
+        description: "Unity is the software im most comftible with having made over 20 game jam games in it"
     },
     {
         name: "C#",
         logo: "media/Logos/csharp.png",
-        description: "Primary programming language for Unity development, offering robust object-oriented features and extensive libraries."
+        description: "Primary programming language for Unity development, apart from unity i havent used it for anything else"
     },
     {
         name: "Python",
         logo: "media/Logos/python.png",
-        description: "Versatile language used for tools, automation, and backend services with extensive AI and data processing capabilities."
+        description: "I Leart this language when i was in high school and have using it to make differnt software and backends for sites"
     },
     {
         name: "Flask",
         logo: "media/Logos/flask.png",
-        description: "Lightweight Python web framework for building fast and scalable backend services with minimal overhead."
+        description: "Python web framework for building backend services for websites"
     },
     {
         name: "HTML5",
@@ -31,13 +31,13 @@ const technologies = [
     },
     {
         name: "JavaScript",
-        logo: "media/Logos/JS.png",
+        logo: "media/Logos/js.png",
         description: "Dynamic programming language for creating interactive web experiences and real-time functionality."
     },
     {
         name: "Blender",
-        logo: "media/Logos/blender-svgrepo-com.png",
-        description: "Open-source 3D creation suite for modelling, rigging, animation, and rendering game assets and visual effects."
+        logo: "media/Logos/blender.png",
+        description: "A 3D modeling softwere ive used to make models for games and other projects"
     }
 ];
 
