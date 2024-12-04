@@ -72,6 +72,72 @@ main {
     border-radius: 2px;
 }
 
+.scroll-indicator {
+    position: absolute;
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeInOut 5s ease-in-out infinite;
+}
+
+.scroll-arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 3px solid #00ffff;
+    border-bottom: 3px solid #00ffff;
+    transform: rotate(45deg);
+    margin-bottom: 10px;
+    animation: bounce 5s infinite;
+    transition: scale 0.2s ease-in-out;
+}   
+
+.scroll-indicator:hover .scroll-arrow{
+    scale: 1.2;
+}
+
+.scroll-text {
+    margin-top: 20px;
+    color: #00ffff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+@keyframes bounce {
+    0%, 10%, 25%, 35%, 45%, 100% {
+        transform: rotate(45deg) translateY(0);
+    }
+    20% {
+        transform: rotate(45deg) translateY(10px) translateX(10px);
+    }
+    30% {
+        transform: rotate(45deg) translateY(6px) translateX(6px);
+    }
+    40% {
+        transform: rotate(45deg) translateY(2px) translateX(2px);
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0.2;
+    }
+    20% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
