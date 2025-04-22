@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const educationData = [
         {
             title: 'Cert II in Game Development',
@@ -19,6 +19,20 @@ document.addEventListener('DOMContentLoaded', function() {
             institution: 'ASMS',
             date: '2024',
             description: 'Completed Physics, Maths Methods and Digital Tech',
+            side: 'left'
+        },
+        {
+            title: 'Bachelor of Software Engineering (Honours)',
+            institution: 'UniSA',
+            date: '2025 - Current',
+            description: 'strapped in for the next 5 years',
+            side: 'right'
+        },
+        {
+            title: 'Apprentice Software Engineer',
+            institution: 'Australian Submarine company (ASC)',
+            date: '2025 - Current',
+            description: '',
             side: 'left'
         }
     ];
